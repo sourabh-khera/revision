@@ -1,0 +1,48 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+
+</head>
+
+<body>
+  <div>
+<div class="divi">
+  line1<br>
+  line1<br>
+  line1
+</div>
+<br> <br>
+<div class="divi">
+  line2<br>
+  line2<br>
+  line2<br>
+  line2
+</div>
+</div>
+
+
+<script>
+
+$(document).ready(function(){
+
+    var highest=null;
+    var h=0;
+
+    $(".divi").each(function(){
+
+        var h1=$(this).height();
+
+         if(h1>h){
+           h=h1;
+         highest=$(this);
+        }
+      });
+    $(highest).css("background-color","red");
+
+});
+
+</script>
+
+</body>
+</html>

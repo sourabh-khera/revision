@@ -1,0 +1,34 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+</head>
+
+<body>
+
+<select id="sl1">
+<option  value="Hello">Hello</option>
+<option  value="How r u">How r u</option>
+<option  value="I am fine">I am fine</option>
+</select>
+
+<div id="d1">
+
+
+
+</div>
+<script>
+
+$(document).ready(function(){
+
+ $("#sl1").change(function(){
+
+  $("#d1").append(this.value);
+ });
+
+});
+
+
+</script>
+</body>
+</html>

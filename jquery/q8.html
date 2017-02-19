@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+</head>
+
+<body>
+<button>Insert</button>
+<script>
+
+function add()
+{
+ var x=$('<input class="btn1" type="button" value="newbutton"/>');
+  $("body").append(x);
+
+}
+$(document).ready(function(){
+
+$("button").click(function(){
+  add();
+});
+
+$("body").on("click",'input.btn1',function(){
+
+     add();
+
+
+});
+
+});
+
+
+
+
+
+
+</script>
+</body>
+</html>
