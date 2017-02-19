@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+
+</head>
+
+<body>
+
+<div>
+  i m parent
+  <ul>
+    <li>i am child</li>
+  </ul>
+</div>
+<script>
+$(document).ready(function(){
+
+ $("div").on('click',function(event){
+   if(event.target!=this)
+   return ;
+
+
+   alert("hello sourabh");
+
+ });
+});
+</script>
+</body>
+</html>
