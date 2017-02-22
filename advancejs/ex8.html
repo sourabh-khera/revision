@@ -1,0 +1,32 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script>
+</head>
+<body>
+<script>
+
+  var s="here are a bunch of words";
+
+  var str=s.split(" ");
+
+
+
+  for(var i=0;i<str.length;i++)
+  {
+      var b=0;
+    var c=str[i].charAt(b).toUpperCase();
+
+      str[i] =str[i].replace(str[i].charAt(b),c);
+
+      document.write(str[i]+" ");
+
+  }
+
+
+
+
+
+ </script>
+ </body>
+ </html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script>
+</head>
+<body>
+<script>
+
+  var str="aaaaaaaaaaaaaabbbccccddddddddddddddddddddddddddddd";
+  var count=0;
+  var max=0;
+  var c=0;
+  var maxchar=[];
+    for(var i=0;i<str.length;i++)
+    {
+      if((str[i]) in maxchar){
+        maxchar[str[i]]++;
+      }else{
+        maxchar[str[i]] = 1;
+      }
+    }
+    for(var ele in maxchar){
+      if(max<maxchar[ele]){
+        max = maxchar[ele];
+        c = ele;
+      }
+    }
+    document.write(c);
+
+ </script>
+ </body>
+ </html>

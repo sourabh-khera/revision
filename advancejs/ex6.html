@@ -1,0 +1,63 @@
+<html>
+<head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script>
+</head>
+<body>
+
+<button>click </button>
+<script>
+
+var hours=0;
+var minutes=0;
+var seconds=0;
+
+ $("button").click(function(){
+ var interval=setInterval(function(){
+
+  seconds++;
+   if(seconds==60){
+     seconds=0;
+    minutes++;
+  }
+    if(minutes==60){
+      minutes = 0;
+    hours++;
+  }
+
+    if(hours==2){
+      clearInterval(interval);
+    alert("ur service has been completed");
+}
+
+
+
+   var hh=hours;
+   var mm=minutes;
+   var sec=seconds;
+  if(hh<10)
+    hh= '0'+ hh;
+    if(mm<10)
+    mm='0' + mm;
+    if(sec<10)
+    sec='0'+sec;
+
+    $("div").text( hh +  ":" +mm + ":"  + sec);
+
+
+    
+},1);
+
+});
+
+
+</script>
+
+
+
+<div id="clock" ></div>
+
+
+</body
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script>
+</head>
+
+<body>
+
+<script>
+
+var str = "bananas";
+       var r=str.charAt(0);
+       for(var i=1;i<str.length;i++){
+           var b = r.search(str.charAt(i));
+
+            if(b<0)
+            {
+              r += str.charAt(i);
+            }
+       }
+       document.write(r);
+</script>
+</body>
+</html>
