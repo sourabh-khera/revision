@@ -1,0 +1,57 @@
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+</head>
+
+<body>
+
+<script>
+
+ function Person()
+ {
+
+     var name;
+     var gender;
+
+ }
+
+
+ function Employee()
+ {
+
+      var id;
+      var department;
+
+ }
+
+   Employee.prototype=new Person();
+
+    Employee.prototype.constructor=Employee;
+
+
+    function Developers()
+    {
+
+      var competency;
+
+    }
+
+      Developers.prototype=new Employee();
+
+      Developers.prototype.constructor=Developers;
+
+       var x = new Developers();
+
+       x.name="sourabh";
+       x.gender="male";
+       x.id="2001";
+       x.department="IT";
+       x.competency="MEAN";
+
+       document.write("Employee_Id: "+x.id+" "+"E_name: "+x.name+" "+"E_gender: "+" "+x.gender+"Department: "+x.department+" "+"competency: "+x.competency );
+
+      </script>
+      </body>
+      </html>
