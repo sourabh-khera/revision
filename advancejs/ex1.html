@@ -1,0 +1,86 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script>
+</head>
+
+<body>
+
+<script>
+
+function validateForm()
+{
+      try{
+  var fn=document.forms["myform"]["ft1"].value;
+   var sn=document.forms["myform"]["st2"].value;
+   var ctn=document.forms["myform"]["ct3"].value;
+   var dob=document.forms["myform"]["dt4"].value;
+
+    var reg=new RegExp("[a-z,A-Z]");
+
+
+
+     if(reg.test(fn)!=true)throw " first name patten does not match";
+
+      if(reg.test(sn)!=true)throw "Second name pattern does not match";
+
+    if(!(/^\d{10}$/.test(ctn)))throw "contact pattern is wrong";
+
+
+      var datePat = /^(\d{1,2})(\/|-)(\d{1,2})(\/|-)(\d{4})$/;
+      var matchArray = dob.match(datePat);
+
+  if (matchArray == null) {
+      throw "Please enter date as either mm/dd/yyyy or mm-dd-yyyy.";
+      return false;
+  }
+
+   month = matchArray[1];
+   day = matchArray[3];
+   year = matchArray[5];
+
+  if (month < 1 || month > 12) {
+      throw "Month must be between 1 and 12.";
+
+  }
+
+  if (day < 1 || day > 31) {
+      throw "Day must be between 1 and 31.";
+    }
+
+  if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31) {
+      throw "Month " + month + " doesn`t have 31 days!";
+
+  }
+
+  if (month == 2) {
+      var isleap = (year % 4 == 0);
+      if (day > 29 || (day == 29 && !isleap)) {
+          throw "February " + year + " doesn`t have " + day + " days!";
+        }
+      }
+
+ }
+    catch(e)
+    {
+       alert(e);
+    }
+
+}
+
+</script>
+
+<form name="myform">
+
+FirstName:<input type="text" name="ft1" placeholder="enter first name"><br>
+lastName:<input type="text" name="st2" placeholder="enter last name"><br>
+ContactNumber:<input type="text" name="ct3" placeholder="enter number"><br>
+DateOfBirth:<input type="text" name="dt4" placeholder="enter DOB"><br>
+
+<button onclick="validateForm()">check</button>
+
+</form>
+
+</body>
+
+</html>
