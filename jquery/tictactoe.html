@@ -37,6 +37,8 @@
 
 </div>
 
+<div class="display"></div>
+
 <script>
 
      var tictac=[
@@ -49,55 +51,63 @@
      var player2=2;
      var position=0;
       var flag = 0;
+      var count=true;
 
-     $(".buttonclass").click(function(){
 
-         if(flag==0){
+     if(count==true) {
 
-               $(this).text("O");
-               flag=1;
-         }
-         else{
 
-             $(this).text("X");
-             flag=0;
-         }
+         if (position !=9) {
 
-         $(this).attr("disabled",true);
+             $(".buttonclass").click(function () {
 
-       var getid=this.id;
-         ++position;
+                 if (flag == 0) {
 
-         //console.log(getid);
+                     $(this).text("O");
+                     flag = 1;
+                 }
+                 else {
 
-         var x= Number(getid.charAt(0));
-         var y= Number(getid.charAt(1));
+                     $(this).text("X");
+                     flag = 0;
+                 }
 
-         if(position%2!=0){
+                 $(this).attr("disabled", true);
 
-           tictac[x][y]=player1;
+                 var getid = this.id;
+                 ++position;
 
-           var result=checkWinner(x,y,1);
 
-             if(result==true)
-             {
+                 var x = Number(getid.charAt(0));
+                 var y = Number(getid.charAt(1));
 
-                 console.log("player"+player1+"is winner");
-             }
+                 if (position % 2 != 0) {
 
-         }
-         else{
+                     tictac[x][y] = player1;
 
-             tictac[x][y]=player2;
+                     var result = checkWinner(x, y, 1);
 
-             var result=checkWinner(x,y,2);
+                     if (result == true) {
 
-             if(result==true)
-             {
+                         $(".display").text("player one is winner");
+                          count= false;
+                     }
 
-                 console.log("player"+player2+"is winner");
-             }
-         }
+                 }
+                 else {
+
+                     tictac[x][y] = player2;
+
+                     var result = checkWinner(x, y, 2);
+
+                     if (result == true) {
+
+                         $(".display").text("player 2 is winner");
+
+                         count = false;
+                     }
+
+                 }
 
 //        if(position==5){
 //
@@ -110,10 +120,22 @@
 //             }
 //        }
 
-       //console.log(tictac[x][y]);
+                 //console.log(tictac[x][y]);
 
 
-     });
+             });
+
+         }
+         else {
+
+            $(".display").text("Match Drawn");
+         }
+
+    }
+      else{
+
+         $(".display").text("game finished plz restart");
+     }
 
 
       function checkWinner( x, y, player){
@@ -124,9 +146,9 @@
          var rdiag=0;
          var winner=false;
 
-         var n=(tictac.length)-1;
+         var n=(tictac.length);
 
-         for(var i=0;i<=n;i++){
+         for(var i=0;i<n;i++){
 
              if(tictac[x][i]==player){
 
