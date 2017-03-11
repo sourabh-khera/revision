@@ -1,0 +1,26 @@
+
+body{
+
+}
+.tictac button{
+
+    height:80px;
+    width:80px;
+    cellspacing: 0px ;
+    padding:0px;
+
+}
+
+.tictac table td{
+
+    border:2px solid black;
+}
+
+body{
+
+    width:300px;
+    margin:auto;
+    margin-top: 100px;
+
+
+}
