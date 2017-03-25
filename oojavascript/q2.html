@@ -1,0 +1,22 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+
+</head>
+<body>
+
+<script>
+
+var arr=[1,2,3,4,5];
+var k=0;
+function show(){
+  console.log(arr[k]);
+  if(++k<arr.length){
+    setTimeout(show,3000);
+  }
+};
+show();
+</script>
+</body>
+</html>

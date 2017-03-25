@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+</script>
+
+</head>
+<body>
+<button>Fetch Data</button>
+<script>
+
+   $(document).ready(function(){
+
+   $("button").click(function(){
+        $.ajax({
+
+       url:"https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b1b15e88fa797225412429c1c50c122a1",
+         method:'GET'}).then(function(data){
+
+            console.log(data);
+
+         });
+
+        });
+});
+
+</script>
+
+</body>
+</html>

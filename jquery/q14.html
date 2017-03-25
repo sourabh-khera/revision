@@ -1,0 +1,51 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+
+<style>
+ table,tr,td{
+   border:2px solid black;
+ }
+ </style>
+</head>
+<body>
+
+<table id="tbl">
+  <tr class="row">
+   <td>20</td>
+ </tr>
+   <tr>
+     <td>5</td>
+     </tr>
+     <tr>
+     <td>40</td>
+     </tr>
+     <tr>
+     <td>7</td>
+     </tr>
+     </table>
+<br><br>
+     <button>plzz click me </button>
+  <script>
+  $(document).ready(function(){
+
+    $('button').click(function(){
+       $("td").each(function(){
+
+         if($(this).text() > 10){
+             $(this).css("background-color","red");
+         }
+
+
+
+    });
+
+
+ });
+
+  });
+
+</script>
+</body>
+</html>

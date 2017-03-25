@@ -1,0 +1,190 @@
+<html>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="tictactoe.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="tictac">
+<table>
+
+    <tr>
+
+        <td><button id="00" class="buttonclass"></button></td>
+        <td><button id="01" class="buttonclass"></button></td>
+        <td><button id="02" class="buttonclass"></button></td>
+    </tr>
+    <tr>
+
+        <td><button id="10" class="buttonclass"></button></td>
+        <td><button id="11" class="buttonclass"></button></td>
+        <td><button id="12" class="buttonclass"></button></td>
+
+    </tr>
+    <tr>
+
+        <td><button id="20" class="buttonclass"></button></td>
+        <td><button id="21" class="buttonclass"></button></td>
+        <td><button id="22" class="buttonclass"></button></td>
+
+    </tr>
+
+
+
+</table>
+
+</div>
+
+<div class="display"></div>
+
+<script>
+
+     var tictac=[
+         [0,0,0],
+         [0,0,0],
+         [0,0,0]
+     ]
+
+     var player1=1;
+     var player2=2;
+     var position=0;
+      var flag = 0;
+      var count=true;
+
+
+     if(count==true) {
+
+
+         if (position !=9) {
+
+             $(".buttonclass").click(function () {
+
+                 if (flag == 0) {
+
+                     $(this).text("O");
+                     flag = 1;
+                 }
+                 else {
+
+                     $(this).text("X");
+                     flag = 0;
+                 }
+
+                 $(this).attr("disabled", true);
+
+                 var getid = this.id;
+                 ++position;
+
+
+                 var x = Number(getid.charAt(0));
+                 var y = Number(getid.charAt(1));
+
+                 if (position % 2 != 0) {
+
+                     tictac[x][y] = player1;
+
+                     var result = checkWinner(x, y, 1);
+
+                     if (result == true) {
+
+                         $(".display").text("player one is winner");
+                          count= false;
+                     }
+
+                 }
+                 else {
+
+                     tictac[x][y] = player2;
+
+                     var result = checkWinner(x, y, 2);
+
+                     if (result == true) {
+
+                         $(".display").text("player 2 is winner");
+
+                         count = false;
+                     }
+
+                 }
+
+//        if(position==5){
+//
+//             var result=checkWinner(x,y,position);
+//
+//             if(result==true)
+//             {
+//
+//                 console.log("player"+position+"is winner");
+//             }
+//        }
+
+                 //console.log(tictac[x][y]);
+
+
+             });
+
+         }
+         else {
+
+            $(".display").text("Match Drawn");
+         }
+
+    }
+      else{
+
+         $(".display").text("game finished plz restart");
+     }
+
+
+      function checkWinner( x, y, player){
+
+         var col=0;
+         var row=0;
+         var diag=0;
+         var rdiag=0;
+         var winner=false;
+
+         var n=(tictac.length);
+
+         for(var i=0;i<n;i++){
+
+             if(tictac[x][i]==player){
+
+                 col++;
+             }
+
+             if(tictac[i][y]==player){
+
+                 row++;
+             }
+
+             if(tictac[i][i]==player){
+
+                 diag++;
+             }
+
+             if(tictac[i][n-i+1]==player){
+
+                 rdiag++;
+             }
+
+         }
+
+         if(col==n||row==n||diag==n||rdiag==n){
+
+             winner=true;
+         }
+
+         return winner;
+     }
+
+
+
+</script>
+
+</body>
+
+
+</html>
