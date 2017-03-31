@@ -1,0 +1,6 @@
+Q1.Get the single line comments in different file.
+
+Q2.Read package.json file
+   Find the count of dependencies and devdependencies.
+   Find the common dependencies btw dependencies and devdependencies.
+   Write the above results in another file.
